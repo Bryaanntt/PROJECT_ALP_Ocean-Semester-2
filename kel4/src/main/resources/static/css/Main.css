@@ -1,0 +1,24 @@
+/* ============================================
+   MAIN CSS - Import semua file modular
+   ============================================ */
+
+/* Base */
+@import url('Base/Variables.css');
+@import url('Base/Reset.css');
+@import url('Base/Animations.css');
+
+/* Layouts */
+@import url('Layouts/Navbar.css');
+@import url('Layouts/Hero.css');
+@import url('Layouts/Sections.css');
+@import url('Layouts/Footer.css');
+
+/* Components */
+@import url('Components/Buttons.css');
+@import url('Components/Cards.css');
+@import url('Components/Modal.css');
+@import url('Components/Quiz.css');
+@import url('Components/Comments.css');
+
+/* Pages */
+@import url('Pages/Main.css');

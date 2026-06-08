@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PureMarine — Tips Aksi</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<div class="ocean-bg">
+<div class="wave"></div>
+<div class="wave"></div>
+<div class="wave"></div>
+</div>
+
+<nav id="navbar">
+<a href="/" class="nav-logo">
+    <img src="/Foto/LogoBiru.png" alt="Logo" style="height:123px;width:auto;object-fit:contain;">
+</a>
+<ul class="nav-links" style="margin-left:auto;">
+    <li><a href="/">Beranda</a></li>
+    <li><a href="/modules">Modul</a></li>
+    <li><a href="/tips" class="active">Tips Aksi</a></li>
+    <li id="nav-auth-area">
+    <button class="btn-primary" style="padding:8px 18px;font-size:0.85rem;" onclick="openAuth('login')">Masuk / Daftar</button>
+    </li>
+    <li><button class="theme-btn" onclick="toggleTheme()" title="Ganti tema">☀️</button></li>
+</ul>
+<div style="display:flex;align-items:center;gap:8px;">
+    <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/">🏠 Beranda</a>
+  <a href="/modules">📚 Modul</a>
+  <a href="/tips">💡 Tips Aksi</a>
+  <a href="#" onclick="openAuth('login');document.getElementById('nav-mobile').classList.remove('open')">🔑 Masuk / Daftar</a>
+  <a href="#" onclick="toggleTheme()">🌓 Ganti Tema</a>
+</div>
+
+<div class="page-wrapper">
+  <section class="section" style="padding-top:6rem;">
+
+    <div class="section-header">
+      <div class="section-tag">💡 Tips & Aksi</div>
+      <h2 class="section-title">Cara Melindungi Laut dalam Kehidupan Sehari-hari</h2>
+      <p class="section-desc">Setiap tindakan kecil memberi dampak besar bagi kesehatan laut kita. Mulailah dari kebiasaan sederhana.</p>
+    </div>
+
+    <div class="tips-grid">
+      <div class="tip-card reveal-card">
+        <div class="tip-icon">👜</div>
+        <div class="tip-title">Bawa Tas Belanja Sendiri</div>
+        <div class="tip-desc">Ganti kantong plastik sekali pakai dengan tas kain yang bisa dipakai berulang kali.</div>
+      </div>
+      <div class="tip-card reveal-card">
+        <div class="tip-icon">🥤</div>
+        <div class="tip-title">Tolak Sedotan Plastik</div>
+        <div class="tip-desc">Minta minuman tanpa sedotan atau bawa sedotan stainless sendiri saat keluar rumah.</div>
+      </div>
+      <div class="tip-card reveal-card">
+        <div class="tip-icon">🍶</div>
+        <div class="tip-title">Gunakan Botol Minum Isi Ulang</div>
+        <div class="tip-desc">Bawa botol minum sendiri ke mana pun untuk mengurangi sampah botol plastik sekali pakai.</div>
+      </div>
+      <div class="tip-card reveal-card">
+        <div class="tip-icon">🍱</div>
+        <div class="tip-title">Bawa Wadah Makan Sendiri</div>
+        <div class="tip-desc">Saat beli makanan take away, gunakan kotak makan sendiri agar tidak perlu kemasan plastik.</div>
+      </div>
+      <div class="tip-card reveal-card">
+        <div class="tip-icon">♻️</div>
+        <div class="tip-title">Pilah Sampah di Rumah</div>
+        <div class="tip-desc">Pisahkan sampah plastik, kertas, dan organik agar lebih mudah didaur ulang dan tidak berakhir di laut.</div>
+      </div>
+      <div class="tip-card reveal-card">
+        <div class="tip-icon">🗑️</div>
+        <div class="tip-title">Ikut Bersih-Bersih Pantai</div>
+        <div class="tip-desc">Bergabunglah dengan komunitas beach cleanup atau pungut sampah setiap kali kamu mengunjungi pantai.</div>
+      </div>
+      <div class="tip-card reveal-card">
+        <div class="tip-icon">🐟</div>
+        <div class="tip-title">Pilih Ikan yang Berkelanjutan</div>
+        <div class="tip-desc">Beli ikan dari nelayan lokal yang menggunakan alat tangkap ramah lingkungan dan hindari spesies yang terancam punah.</div>
+      </div>
+      <div class="tip-card reveal-card">
+        <div class="tip-icon">📱</div>
+        <div class="tip-title">Sebarkan Kesadaran</div>
+        <div class="tip-desc">Bagikan informasi tentang polusi laut kepada keluarga dan teman di media sosial untuk mendorong perubahan bersama.</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">
+          <img src="/Foto/LogoBiru.png" alt="Logo" style="height:123px;width:auto;object-fit:contain;">
+        </a>
+        <p>Platform edukasi pelestarian laut Indonesia. Bersama kita jaga lautan untuk generasi yang akan datang.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="/">Beranda</a></li>
+          <li><a href="/modules">Modul Belajar</a></li>
+          <li><a href="/tips">Tips Aksi</a></li>
+          <li><a href="/#about-section">Tentang Kami</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Topik</h4>
+        <ul>
+          <li><a href="/modules">Polusi Plastik</a></li>
+          <li><a href="/modules">Terumbu Karang</a></li>
+          <li><a href="/modules">Overfishing</a></li>
+          <li><a href="/modules">Perubahan Iklim</a></li>
+          <li><a href="/modules">Mangrove</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sumber Daya</h4>
+        <ul>
+          <li><a href="#">KLHK Indonesia</a></li>
+          <li><a href="#">KKP Indonesia</a></li>
+          <li><a href="#">WWF Indonesia</a></li>
+          <li><a href="#">LIPI / BRIN</a></li>
+          <li><a href="#">Ocean Watch</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 PureMarine Indonesia — Edukasi Pelestarian Laut</span>
+    </div>
+  </footer>
+
+</div>
+
+<!-- AUTH MODAL -->
+<div class="auth-modal-overlay" id="auth-modal" onclick="if(event.target===this)closeAuth()">
+  <div class="auth-box">
+    <button class="auth-close" onclick="closeAuth()">✕</button>
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="auth-tab-login" onclick="switchAuthTab('login')">Masuk</button>
+      <button class="auth-tab" id="auth-tab-signup" onclick="switchAuthTab('signup')">Daftar</button>
+    </div>
+    <div id="auth-panel-login">
+      <div class="auth-title">Selamat Datang! 👋</div>
+      <div class="auth-sub">Masuk untuk bisa berkomentar dan melacak progresmu.</div>
+      <div class="auth-field">
+        <label class="auth-label">Username</label>
+        <input class="auth-input" type="text" id="login-username" placeholder="Masukkan username...">
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Password</label>
+        <input class="auth-input" type="password" id="login-password" placeholder="Masukkan password...">
+      </div>
+      <div class="auth-error" id="auth-error-login"></div>
+      <button class="auth-btn" onclick="doLogin()">Masuk →</button>
+      <p style="text-align:center;margin-top:1rem;font-size:0.85rem;color:var(--text-muted)">
+        Belum punya akun? <a href="#" onclick="switchAuthTab('signup')" style="color:var(--ocean-light);text-decoration:none;font-weight:500;">Daftar sekarang</a>
+      </p>
+    </div>
+    <div id="auth-panel-signup" style="display:none">
+      <div class="auth-title">Buat Akun Baru 🌊</div>
+      <div class="auth-sub">Bergabunglah dengan ribuan penjaga laut Indonesia!</div>
+      <div class="auth-field">
+        <label class="auth-label">Username</label>
+        <input class="auth-input" type="text" id="signup-username" placeholder="Pilih username unikmu...">
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Password</label>
+        <input class="auth-input" type="password" id="signup-password" placeholder="Minimal 6 karakter...">
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Konfirmasi Password</label>
+        <input class="auth-input" type="password" id="signup-confirm" placeholder="Ulangi password...">
+      </div>
+      <div class="auth-error" id="auth-error-signup"></div>
+      <button class="auth-btn" onclick="doSignup()">Buat Akun →</button>
+      <p style="text-align:center;margin-top:1rem;font-size:0.85rem;color:var(--text-muted)">
+        Sudah punya akun? <a href="#" onclick="switchAuthTab('login')" style="color:var(--ocean-light);text-decoration:none;font-weight:500;">Masuk di sini</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

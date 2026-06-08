@@ -1,0 +1,45 @@
+/* ---- ANIMATED OCEAN BACKGROUND ---- */
+.ocean-bg {
+  position: fixed; inset: 0; z-index: 0;
+  background: linear-gradient(180deg, #060e1d 0%, #0a1628 40%, #0d2340 100%);
+  overflow: hidden;
+  transition: background 0.35s;
+}
+body.light .ocean-bg {
+  background: linear-gradient(180deg, #c5e5f5 0%, #d8eef8 40%, #e2f2fb 100%);
+}
+.wave {
+  position: absolute; border-radius: 50%; opacity: 0.06;
+  animation: drift linear infinite;
+}
+body.light .wave { opacity: 0.18; }
+.wave:nth-child(1) { width:600px;height:600px;top:-100px;left:-150px;background:var(--wave-color1);animation-duration:18s; }
+.wave:nth-child(2) { width:400px;height:400px;bottom:10%;right:-100px;background:var(--wave-color2);animation-duration:22s;animation-delay:-5s; }
+.wave:nth-child(3) { width:300px;height:300px;top:40%;left:30%;background:var(--wave-color3);animation-duration:28s;animation-delay:-12s; }
+@keyframes drift {
+  0%   { transform: translate(0,0) scale(1); }
+  33%  { transform: translate(30px,-20px) scale(1.05); }
+  66%  { transform: translate(-20px,30px) scale(0.97); }
+  100% { transform: translate(0,0) scale(1); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%,100%{opacity:1;} 50%{opacity:0.4;}
+}
+
+@keyframes modalIn {
+  from{opacity:0;transform:scale(0.95) translateY(20px);}
+  to{opacity:1;transform:scale(1) translateY(0);}
+}
+
+/* ---- PAGE WRAPPER ---- */
+.page-wrapper { position:relative; z-index:1; }
+
+/* ---- REVEAL ANIMATION ---- */
+.reveal-card { opacity:0; transform:translateY(24px); transition:opacity 0.5s ease, transform 0.5s ease; }
+.reveal-card.visible { opacity:1; transform:translateY(0); }

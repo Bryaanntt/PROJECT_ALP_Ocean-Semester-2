@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${module.title} + ' — PureMarine'">Modul — PureMarine</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<div class="ocean-bg">
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+</div>
+
+<nav id="navbar">
+  <a href="/" class="nav-logo">
+    <img src="/Foto/LogoBiru.png" alt="Logo" style="height:123px;width:auto;object-fit:contain;">
+  </a>
+  <ul class="nav-links" style="margin-left:auto;">
+    <li><a href="/">Beranda</a></li>
+    <li><a href="/modules" class="active">Modul</a></li>
+    <li><a href="/tips">Tips Aksi</a></li>
+    <li id="nav-auth-area">
+      <button class="btn-primary" style="padding:8px 18px;font-size:0.85rem;" onclick="openAuth('login')">Masuk / Daftar</button>
+    </li>
+    <li><button class="theme-btn" onclick="toggleTheme()">☀️</button></li>
+  </ul>
+  <button class="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
+</nav>
+
+<div class="page-wrapper" style="max-width:860px;margin:0 auto;padding:7rem 1.5rem 4rem;">
+
+  <a href="/modules" style="display:inline-flex;align-items:center;gap:6px;color:var(--text-muted);font-size:0.85rem;text-decoration:none;margin-bottom:2rem;padding:6px 14px;border:1px solid var(--card-border);border-radius:8px;">← Kembali ke Modul</a>
+
+  <div style="margin-bottom:2.5rem;">
+    <h1 style="font-family:'Syne',sans-serif;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;line-height:1.2;margin-bottom:0.75rem;" th:text="${module.title}">Judul Modul</h1>
+    <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.6;" th:text="${module.description}">Deskripsi</p>
+  </div>
+
+  <!-- Thumbnail -->
+  <div th:if="${module.thumbnail}" style="border-radius:16px;overflow:hidden;margin-bottom:2.5rem;border:1px solid var(--card-border);">
+    <img th:src="${module.thumbnail}" th:alt="${module.title}" style="width:100%;max-height:400px;object-fit:cover;display:block;">
+  </div>
+
+  <!-- KONTEN SECTIONS -->
+  <div th:each="section : ${contents}">
+
+    <!-- HEADING -->
+    <div th:if="${section.contentType == 'heading'}" style="margin:2rem 0 0.75rem;">
+      <h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;color:var(--ocean-light);padding-bottom:0.5rem;border-bottom:1px solid rgba(56,189,248,0.2);" th:text="${section.title}">Judul Bagian</h3>
+    </div>
+
+    <!-- PARAGRAPH -->
+    <div th:if="${section.contentType == 'paragraph'}" style="margin-bottom:1rem;">
+      <p style="line-height:1.8;color:var(--text-main);font-size:0.925rem;" th:utext="${section.content}">Isi paragraf</p>
+    </div>
+
+    <!-- IMAGE -->
+    <div th:if="${section.contentType == 'image'}" style="border-radius:12px;overflow:hidden;margin:1.5rem 0;border:1px solid var(--card-border);">
+      <img th:src="${section.imageUrl}" th:alt="${section.title}" style="width:100%;max-height:360px;object-fit:cover;display:block;" onerror="this.style.display='none'">
+      <div th:if="${section.title}" style="padding:8px 14px;font-size:0.78rem;color:var(--text-muted);background:var(--input-bg);line-height:1.5;" th:text="${section.title}"></div>
+    </div>
+
+    <!-- FACTBOX -->
+    <div th:if="${section.contentType == 'factbox'}" style="background:rgba(56,189,248,0.06);border-left:3px solid var(--ocean-main);padding:0.85rem 1.1rem;border-radius:0 8px 8px 0;margin:1.25rem 0;font-size:0.86rem;line-height:1.6;">
+      <strong style="color:var(--ocean-light);">📌 <span th:text="${section.title}">Sumber</span></strong>
+      <span th:if="${section.content}"><br><span style="color:var(--text-muted);" th:text="${section.content}"></span></span>
+    </div>
+
+    <!-- BOLD -->
+    <div th:if="${section.contentType == 'bold'}" style="margin-bottom:1rem;">
+      <p style="line-height:1.8;font-size:0.925rem;">
+        <strong style="color:var(--text-main);" th:text="${section.title}"></strong>
+        <span style="color:var(--text-main);" th:text="' ' + ${section.content}"></span>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Tombol lanjut ke kuis -->
+  <div style="margin-top:3rem;padding:2rem;background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;text-align:center;">
+    <div style="font-size:1.5rem;margin-bottom:0.75rem;">✅</div>
+    <h3 style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:0.5rem;">Selesai Membaca?</h3>
+    <p style="color:var(--text-muted);font-size:0.875rem;margin-bottom:1.25rem;">Uji pemahamanmu dengan mengerjakan kuis modul ini.</p>
+    <a th:href="@{/postquiz/{id}(id=${module.id})}" class="btn-primary" style="display:inline-block;padding:0.75rem 2rem;font-size:0.95rem;font-weight:700;border-radius:10px;text-decoration:none;">🧠 Mulai Post Quiz →</a>
+  </div>
+
+</div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* ---- NAVBAR ---- */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index: 1000;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--card-border);
+  padding: 0 2rem; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all 0.3s;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem;
+  letter-spacing: -0.02em; color: var(--text-main); text-decoration: none;
+}
+.nav-logo-icon {
+  width:36px; height:36px;
+  background: linear-gradient(135deg, var(--ocean-main), var(--green));
+  border-radius: 10px; display:flex; align-items:center; justify-content:center; font-size:18px;
+}
+.nav-links { display:flex; align-items:center; gap:2rem; list-style:none; }
+.nav-links a { color:var(--text-muted); text-decoration:none; font-size:0.9rem; font-weight:400; transition:color 0.2s; }
+.nav-links a:hover { color:var(--ocean-light); }
+.nav-links a.active { color:var(--ocean-light); }
+.nav-cta {
+  background:var(--ocean-main); color:#fff !important; padding:8px 20px;
+  border-radius:8px; font-weight:500 !important; transition:background 0.2s !important;
+}
+.nav-cta:hover { background:var(--ocean-light) !important; color:var(--bg-deepest) !important; }
+.nav-hamburger { display:none; background:none; border:none; color:var(--text-main); font-size:1.5rem; cursor:pointer; padding:4px; }
+.nav-mobile {
+  display:none; position:fixed; top:64px; left:0; right:0;
+  background:var(--nav-bg); backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--card-border);
+  padding:1.5rem 2rem; z-index:999; flex-direction:column; gap:1.25rem;
+}
+.nav-mobile.open { display:flex; }
+.nav-mobile a { color:var(--text-muted); text-decoration:none; font-size:1rem; transition:color 0.2s; }
+.nav-mobile a:hover { color:var(--ocean-light); }
+
+/* Theme toggle button */
+.theme-btn {
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--text-main);
+  border-radius: 8px;
+  width: 36px; height: 36px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.theme-btn:hover { background: var(--card-border); }
+
+@media (max-width:900px) {
+  .nav-links { display:none; }
+  .nav-hamburger{ display:flex; }
+}

@@ -1,0 +1,57 @@
+/* ---- DARK MODE (default) ---- */
+:root {
+  --bg-deepest:   #0f2341;
+  --bg-mid:       #133b65;
+  --bg-surface:   #1a4a6e;
+  --ocean-main:   #29a5d6;
+  --ocean-light:  #7ecde8;
+  --ocean-mist:   #c8ebf5;
+  --coral:        #e85d3a;
+  --coral-light:  #f2845f;
+  --green:        #2dbd8a;
+  --green-light:  #52d4a3;
+  --amber:        #f0a500;
+  --white:        #ffffff;
+  --text-main:    #ffffff;
+  --text-muted:   rgba(200,235,245,0.6);
+  --card-bg:      rgba(14,42,71,0.7);
+  --card-border:  rgba(41,165,214,0.2);
+  --input-bg:     rgba(255,255,255,0.06);
+  --input-border: rgba(255,255,255,0.12);
+  --nav-bg:       rgba(6,14,29,0.88);
+  --footer-bg:    transparent;
+  --overlay-bg:   rgba(4,10,20,0.92);
+  --wave-color1:  var(--ocean-main);
+  --wave-color2:  var(--ocean-light);
+  --wave-color3:  var(--green);
+  --radius:       16px;
+  --radius-sm:    10px;
+}
+
+/* ---- LIGHT MODE ---- */
+body.light {
+  --bg-deepest:   #f5fbff;
+  --bg-mid:       #e4f4fc;
+  --bg-surface:   #cde8f7;
+  --ocean-main:   #005f8c;
+  --ocean-light:  #007baf;
+  --ocean-mist:   #00597a;
+  --coral:        #d95e28;
+  --coral-light:  #e8784a;
+  --green:        #0f7e55;
+  --green-light:  #1a9e6c;
+  --amber:        #d08000;
+  --white:        #ffffff;
+  --text-main:    #02283f;
+  --text-muted:   #4a7a96;
+  --card-bg:      rgba(255,255,255,0.88);
+  --card-border:  rgba(0,95,140,0.15);
+  --input-bg:     rgba(0,95,140,0.05);
+  --input-border: rgba(0,95,140,0.2);
+  --nav-bg:       rgba(245,251,255,0.94);
+  --footer-bg:    rgba(228,244,252,0.7);
+  --overlay-bg:   rgba(2,40,63,0.82);
+  --wave-color1:  #90c8e8;
+  --wave-color2:  #a8d8f0;
+  --wave-color3:  #7ec8a8;
+}

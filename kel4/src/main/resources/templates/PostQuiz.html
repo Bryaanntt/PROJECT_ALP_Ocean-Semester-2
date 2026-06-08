@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PureMarine — Post Kuis</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<div class="ocean-bg">
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+</div>
+
+<div class="page-wrapper">
+  <div class="module-container" style="max-width:800px;margin:0 auto;padding:2rem 1.5rem;">
+
+    <a th:href="@{/module/{id}(id=${moduleId})}" style="display:inline-flex;align-items:center;gap:6px;color:var(--text-muted);font-size:0.85rem;text-decoration:none;margin-bottom:2rem;">← Kembali ke Materi</a>
+
+    <div style="margin-bottom:2rem;">
+      <div style="font-size:0.75rem;font-weight:700;color:var(--ocean-light);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.5rem;">🧠 Post Kuis Modul</div>
+      <h2 style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:0.5rem;" th:text="${moduleTitle} ?: 'Kuis Pengetahuan'">Kuis Pengetahuan</h2>
+      <p style="color:var(--text-muted);font-size:0.9rem;">Kamu sudah membaca materinya. Sekarang uji pemahamanmu! Setelah selesai kamu akan melihat hasil pre & post kuis.</p>
+    </div>
+
+    <form id="postQuizForm" th:action="@{/postquiz/{id}(id=${moduleId})}" method="post">
+
+      <div th:each="quiz,stat : ${quizzes}" class="quiz-card" style="background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:1.5rem;margin-bottom:1.25rem;">
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:1rem;line-height:1.5;">
+          <span style="color:var(--ocean-light);" th:text="${stat.count} + '.'">1.</span>
+          <span th:text="${quiz.question}">Pertanyaan</span>
+        </div>
+
+        <label style="display:flex;align-items:flex-start;gap:10px;padding:0.6rem 0.75rem;border-radius:8px;cursor:pointer;margin-bottom:6px;">
+          <input type="radio" th:name="'q'+${quiz.id}" value="A" style="margin-top:2px;flex-shrink:0;">
+          <span><strong>A.</strong> <span th:text="${quiz.optionA}"></span></span>
+        </label>
+        <label style="display:flex;align-items:flex-start;gap:10px;padding:0.6rem 0.75rem;border-radius:8px;cursor:pointer;margin-bottom:6px;">
+          <input type="radio" th:name="'q'+${quiz.id}" value="B" style="margin-top:2px;flex-shrink:0;">
+          <span><strong>B.</strong> <span th:text="${quiz.optionB}"></span></span>
+        </label>
+        <label style="display:flex;align-items:flex-start;gap:10px;padding:0.6rem 0.75rem;border-radius:8px;cursor:pointer;margin-bottom:6px;">
+          <input type="radio" th:name="'q'+${quiz.id}" value="C" style="margin-top:2px;flex-shrink:0;">
+          <span><strong>C.</strong> <span th:text="${quiz.optionC}"></span></span>
+        </label>
+        <label style="display:flex;align-items:flex-start;gap:10px;padding:0.6rem 0.75rem;border-radius:8px;cursor:pointer;">
+          <input type="radio" th:name="'q'+${quiz.id}" value="D" style="margin-top:2px;flex-shrink:0;">
+          <span><strong>D.</strong> <span th:text="${quiz.optionD}"></span></span>
+        </label>
+      </div>
+
+      <div style="text-align:center;margin-top:2rem;">
+        <button type="submit" class="btn-primary" style="padding:0.9rem 2.5rem;font-size:1rem;font-weight:700;border-radius:12px;">✅ Selesai &amp; Lihat Hasil</button>
+        <p style="color:var(--text-muted);font-size:0.8rem;margin-top:0.75rem;">Setelah submit, kamu akan melihat perbandingan hasil pre & post kuis.</p>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

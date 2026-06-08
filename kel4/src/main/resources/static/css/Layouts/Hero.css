@@ -1,0 +1,23 @@
+/* ---- HERO ---- */
+.hero { min-height:100vh; display:flex; align-items:center; padding:100px 2rem 4rem; max-width:1200px; margin:0 auto; }
+.hero-content { max-width:660px; }
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(41,165,214,0.1); border:1px solid rgba(41,165,214,0.3);
+  border-radius:100px; padding:6px 16px; font-size:0.8rem; color:var(--ocean-light);
+  margin-bottom:2rem; animation:fadeUp 0.6s ease both;
+}
+body.light .hero-badge { background:rgba(26,133,181,0.1); border-color:rgba(26,133,181,0.35); }
+.badge-dot { width:6px; height:6px; border-radius:50%; background:var(--green); animation:pulse 2s infinite; }
+.hero h1 {
+  font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:800;
+  line-height:1.08; letter-spacing:-0.03em; margin-bottom:1.5rem;
+  animation:fadeUp 0.6s 0.1s ease both;
+}
+.hero h1 span { color:var(--ocean-main); }
+.hero h1 em   { color:var(--green); font-style:normal; }
+.hero-desc { font-size:1.1rem; color:var(--text-muted); line-height:1.7; max-width:520px; margin-bottom:2.5rem; animation:fadeUp 0.6s 0.2s ease both; }
+.hero-actions { display:flex; gap:1rem; flex-wrap:wrap; animation:fadeUp 0.6s 0.3s ease both; }
+.hero-stats { display:flex; gap:2.5rem; margin-top:3.5rem; animation:fadeUp 0.6s 0.4s ease both; flex-wrap:wrap; }
+.hero-stat-val { font-family:'Syne',sans-serif; font-size:1.8rem; font-weight:700; color:var(--text-main); }
+.hero-stat-label { font-size:0.8rem; color:var(--text-muted); margin-top:2px; }

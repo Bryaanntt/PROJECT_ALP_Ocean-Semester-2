@@ -1,0 +1,33 @@
+/* ---- SECTIONS ---- */
+.section { max-width:1200px; margin:0 auto; padding:5rem 2rem; }
+.section-tag { font-size:0.75rem; font-weight:500; text-transform:uppercase; letter-spacing:0.12em; color:var(--ocean-main); margin-bottom:1rem; }
+.section-title { font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3vw,2.5rem); font-weight:700; letter-spacing:-0.02em; line-height:1.2; margin-bottom:1rem; }
+.section-desc { color:var(--text-muted); font-size:1rem; line-height:1.7; max-width:580px; }
+.section-header { margin-bottom:3rem; }
+.divider { height:1px; background:linear-gradient(90deg,transparent,var(--card-border),transparent); max-width:1200px; margin:0 auto; }
+
+/* ---- STATS STRIP ---- */
+.stats-strip { background:rgba(14,42,71,0.5); border-top:1px solid var(--card-border); border-bottom:1px solid var(--card-border); padding:2.5rem 2rem; }
+body.light .stats-strip { background:rgba(208,233,245,0.6); }
+.stats-strip-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:2rem; }
+.stat-item { text-align:center; }
+.stat-big { font-family:'Syne',sans-serif; font-size:2.2rem; font-weight:700; color:var(--ocean-light); }
+.stat-label { font-size:0.85rem; color:var(--text-muted); margin-top:4px; }
+.stat-red   { color:var(--coral); }
+.stat-green { color:var(--green); }
+.stat-amber { color:var(--amber); }
+
+/* ---- ABOUT SECTION ---- */
+.about-grid   { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+.about-visual { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.about-card   { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius); padding:1.5rem; text-align:center; backdrop-filter:blur(8px); }
+.about-card-icon  { font-size:2rem; margin-bottom:0.75rem; }
+.about-card-title { font-family:'Syne',sans-serif; font-size:0.95rem; font-weight:600; margin-bottom:0.4rem; }
+.about-card-desc  { font-size:0.8rem; color:var(--text-muted); line-height:1.5; }
+
+@media (max-width:900px) {
+  .about-grid { grid-template-columns:1fr; }
+}
+@media (max-width:600px) {
+  .about-visual { grid-template-columns:1fr; }
+}
