@@ -1,6 +1,9 @@
-/* ---- HERO ---- */
-.hero { min-height:100vh; display:flex; align-items:center; padding:100px 2rem 4rem; max-width:1200px; margin:0 auto; }
+.hero {
+  min-height:100vh; display:flex; align-items:center;
+  padding:100px 2rem 4rem; max-width:1200px; margin:0 auto;
+}
 .hero-content { max-width:660px; }
+
 .hero-badge {
   display:inline-flex; align-items:center; gap:8px;
   background:rgba(41,165,214,0.1); border:1px solid rgba(41,165,214,0.3);
@@ -8,16 +11,89 @@
   margin-bottom:2rem; animation:fadeUp 0.6s ease both;
 }
 body.light .hero-badge { background:rgba(26,133,181,0.1); border-color:rgba(26,133,181,0.35); }
-.badge-dot { width:6px; height:6px; border-radius:50%; background:var(--green); animation:pulse 2s infinite; }
+
+.badge-dot {
+  width:6px; height:6px; border-radius:50%;
+  background:var(--green); animation:pulse 2s infinite;
+}
+
 .hero h1 {
-  font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:800;
-  line-height:1.08; letter-spacing:-0.03em; margin-bottom:1.5rem;
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2rem,4vw,3.2rem);
+  font-weight:800; line-height:1.08;
+  letter-spacing:-0.03em; margin-bottom:1.5rem;
   animation:fadeUp 0.6s 0.1s ease both;
 }
+/* INI KUNCI — warna span dan em di hero */
 .hero h1 span { color:var(--ocean-main); }
 .hero h1 em   { color:var(--green); font-style:normal; }
-.hero-desc { font-size:1.1rem; color:var(--text-muted); line-height:1.7; max-width:520px; margin-bottom:2.5rem; animation:fadeUp 0.6s 0.2s ease both; }
+
+.hero-desc {
+  font-size:1.1rem; color:var(--text-muted); line-height:1.7;
+  max-width:520px; margin-bottom:2.5rem;
+  animation:fadeUp 0.6s 0.2s ease both;
+}
 .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; animation:fadeUp 0.6s 0.3s ease both; }
-.hero-stats { display:flex; gap:2.5rem; margin-top:3.5rem; animation:fadeUp 0.6s 0.4s ease both; flex-wrap:wrap; }
-.hero-stat-val { font-family:'Syne',sans-serif; font-size:1.8rem; font-weight:700; color:var(--text-main); }
+
+.hero-stats {
+  display:flex; gap:2.5rem; margin-top:3.5rem;
+  animation:fadeUp 0.6s 0.4s ease both; flex-wrap:wrap;
+}
+.hero-stat-val  { font-family:'Syne',sans-serif; font-size:1.8rem; font-weight:700; color:var(--text-main); }
 .hero-stat-label { font-size:0.8rem; color:var(--text-muted); margin-top:2px; }
+
+/* ---- HERO BANNER (module detail page) ---- */
+.module-hero {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 2.5rem 2.75rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  animation: fadeUp 0.5s ease both;
+}
+.module-hero::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg,var(--ocean-main),var(--green));
+  border-radius:16px 16px 0 0;
+}
+.module-hero::after {
+  content:'';
+  position:absolute; top:-80px; right:-80px;
+  width:240px; height:240px; border-radius:50%;
+  background:radial-gradient(circle, rgba(41,165,214,0.08) 0%, transparent 70%);
+  pointer-events:none;
+}
+
+.hero-eyebrow {
+  display:inline-flex; align-items:center; gap:7px;
+  background:rgba(41,165,214,0.1); border:1px solid rgba(41,165,214,0.28);
+  border-radius:100px; padding:4px 14px;
+  font-size:0.72rem; font-weight:600; letter-spacing:0.1em;
+  text-transform:uppercase; color:var(--ocean-light);
+  margin-bottom:1.1rem;
+}
+body.light .hero-eyebrow { background:rgba(0,95,140,0.1); border-color:rgba(0,95,140,0.28); }
+
+.module-title {
+  font-family:'Syne',sans-serif;
+  font-size:clamp(1.5rem,3.5vw,2.2rem);
+  font-weight:800; color:var(--text-main);
+  letter-spacing:-0.02em; line-height:1.18;
+  margin-bottom:1.1rem;
+}
+
+.hero-meta { display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap; }
+
+body.light .module-hero {
+  background:rgba(255,255,255,0.88);
+  border-color:rgba(0,95,140,0.15);
+}
+
+@media (max-width:600px) {
+  .hero { padding:80px 1.25rem 3rem; }
+  .module-hero { padding:1.6rem 1.25rem; }
+}

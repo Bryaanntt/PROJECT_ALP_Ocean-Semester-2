@@ -1,7 +1,3 @@
-/**
- * Utils - Single Responsibility: Helper functions
- */
-
 const Utils = {
     escapeHtml(str) {
         if (!str) return '';
